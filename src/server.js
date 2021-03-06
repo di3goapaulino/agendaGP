@@ -9,4 +9,4 @@ app.get('/*', (req, res) => {
   res.sendFile(`${outputPath}/index.html`);
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 8080);
