@@ -1,0 +1,141 @@
+<section class="content-header">
+  <h1>
+    {{profile?.name}}
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-location-arrow" aria-hidden="true"></i> São Paulo</a></li>
+    <li><a href="#">Jundiaí</a></li>
+  </ol>
+</section>
+
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-3">
+
+      <!-- Profile Image -->
+      <div class="box box-purple">
+        <div class="box-body box-profile" *ngIf="profile">
+          <img class="profile-user-img img-responsive img-circle" [src]="profile?.imageProfile"
+            alt="User profile picture">
+
+          <ul class="list-group list-group-unbordered">
+            <li class="list-group-item">
+              <span *ngFor="let mediaButons of profile?.alllinks">
+                <a href="#" class="fa fa-{{mediaButons.socialMedia}}"></a>
+              </span>
+            </li>
+            <li class="list-group-item">
+              Estilo: {{profile?.category}}
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-whatsapp" aria-hidden="true"></i> {{profile?.celphone}}
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-money" aria-hidden="true"></i> {{profile?.hourCost}}
+            </li>
+          </ul>
+
+          <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+      <!-- About Me Box -->
+      <div class="box box-purple">
+        <div class="box-header with-border">
+          <h3 class="box-title">Sobre mim</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+
+          <strong><i class="fa fa-id-card" aria-hidden="true"></i> Perfil</strong>
+
+          <p>
+            <span class="label label-info">Idade: {{profile?.attributes.age}}</span>
+            <span class="label label-info">Busto: {{profile?.attributes.bust}}</span>
+            <span class="label label-info">Cintura: {{profile?.attributes.waist}}</span>
+            <span class="label label-info">Quadril: {{profile?.attributes.hip}}</span>
+            <span class="label label-info">Altura: {{profile?.attributes.heigth}}</span>
+            <span class="label label-info">Peso: {{profile?.attributes.weigth}}</span>
+            <span class="label label-info">Pés: {{profile?.attributes.feet}}</span>
+            <span class="label label-info">Cabelo: {{profile?.attributes.colorHair}}</span>
+            <span class="label label-info">Olhos: {{profile?.attributes.colorEye}}</span>
+          </p>
+
+          <hr>
+
+          <strong><i class="fa fa-handshake-o margin-r-5"></i>Meus serviços</strong>
+
+          <br>
+          <span *ngFor="let sercice of profile?.services">
+            <span class="label label-{{sercice.accept}}">{{sercice.name}}</span>
+          </span>
+
+          <hr>
+
+          <strong><i class="fa fa-female" aria-hidden="true"></i> Descrição</strong>
+
+          <p class="text-muted">{{profile?.about}}</p>
+
+          <hr>
+
+          <strong><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Atendimento</strong>
+          <br>
+          <p><i class="fa fa-home" aria-hidden="true"></i> {{profile?.cityPlace}}</p>
+          <p><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{profile?.paymentForm}}</p>
+          <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{profile?.businessHours}} </p>
+
+          <hr>
+
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-header p-2">
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Fotos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Videos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reviews" data-toggle="tab">Avaliações</a></li>
+          </ul>
+        </div><!-- /.card-header -->
+        <div class="card-body">
+          <div class="tab-content">
+            <div class="active tab-pane" id="activity">
+              <br>
+              <div class="timeline-body">
+                <img [src]="profile?.imageProfile" alt="...">
+                <img [src]="profile?.imageProfile" alt="...">
+                <img [src]="profile?.imageProfile" alt="...">
+                <img [src]="profile?.imageProfile" alt="...">
+              </div>
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="timeline">
+              
+              Em Breve
+            </div>
+            <!-- /.tab-pane -->
+
+            <div class="tab-pane" id="reviews">
+              <br>
+              <mt-reviews></mt-reviews>
+
+            </div>
+            <!-- /.tab-pane -->
+          </div>
+          <!-- /.tab-content -->
+        </div><!-- /.card-body -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+</section>
