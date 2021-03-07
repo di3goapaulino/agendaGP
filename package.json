@@ -12,7 +12,7 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "npm i && ng build --prod"
   },
   "engines": {
     "node": "12.x",
