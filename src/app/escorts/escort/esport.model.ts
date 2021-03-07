@@ -3,9 +3,10 @@ export interface Escort {
     name: string
     category: string
     hourCost: string
-    rating: number
     imagePath: string
     about: string
-    hours: string
+    status: string
     photos: string
+    celphone: string
+    cityPlace: string
   }
