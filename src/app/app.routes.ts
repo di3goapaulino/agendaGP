@@ -6,9 +6,11 @@ import { HomeComponent } from "./home/home.component";
 import { ReviewsComponent } from "./profile/reviews/reviews.component";
 import { PhotoComponent } from "./profile/photo/photo.component";
 import { VideosComponent } from "./profile/videos/videos.component";
+import {LoginComponent} from './security/login/login.component'
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
+    {path: 'login', component: LoginComponent},
     {path: 'about', component: AboutComponent},
     {path: 'escorts', component: EscortsComponent},
     {path: 'profiles/:id', component: ProfileComponent,

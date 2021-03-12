@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Http } from '@angular/http'
+import {HttpClient, HttpParams} from '@angular/common/http'
 
 import { Profile } from "./profile.model";
 
@@ -8,30 +8,22 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
-import { ErrorHandler } from '../app.error-handler'
+import { ApplicationErrorHandler } from '../app.error-handler'
 
 @Injectable()
 export class ProfileService {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
-  }
-
-  profiles(): Observable<Profile[]> {
-    return this.http.get(`${URL_SERVER}/profiles`)
-      .map(response => response.json())
   }
 
   profileById(id: string): Observable<Profile> {
-    return this.http.get(`${URL_SERVER}/profiles/${id}`)
-      .map(response => response.json())
-      .catch(ErrorHandler.handleError)
+    return this.http.get<Profile>(`${URL_SERVER}/profiles/${id}`)
+      
   }
 
   reviewsOfProfile(id: string): Observable<any>{
     return this.http.get(`${URL_SERVER}/profiles/${id}/reviews`)
-      .map(response => response.json())
-      .catch(ErrorHandler.handleError)
   }
 
 }

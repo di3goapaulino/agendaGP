@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import { ROUTES } from 'app/app.routes';
 
@@ -20,6 +20,7 @@ import { GalleryComponent } from './profile/gallery/gallery.component';
 import { PhotoComponent } from './profile/photo/photo.component';
 import { VideosComponent } from './profile/videos/videos.component';
 import { ReviewsComponent } from './profile/reviews/reviews.component';
+import { LoginComponent } from './security/login/login.component';
 
 
 @NgModule({
@@ -35,15 +36,20 @@ import { ReviewsComponent } from './profile/reviews/reviews.component';
     GalleryComponent,
     PhotoComponent,
     VideosComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [EscortsService, ProfileService],
+  providers: [
+    EscortsService
+    , ProfileService
+    , {provide: LOCALE_ID, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
