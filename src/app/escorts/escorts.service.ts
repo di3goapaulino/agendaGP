@@ -23,6 +23,7 @@ export class EscortsService {
         if (search) {
             params = new HttpParams().append('q', search)
         }
+        
         return this.http.get<Escort[]>(`${URL_SERVER}/escorts`, { params: params })
 
     }
