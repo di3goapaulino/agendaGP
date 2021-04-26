@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npm cache clean --force",
     "ng": "ng",
-    "start": "ng serve",
+    "dev": "ng serve",
     "build": "ng build --prod",
     "lint": "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
     "test": "ng test",
