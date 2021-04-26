@@ -1,12 +1,12 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 
-const appName = 'agenda-gp';
-const outputPath = `${__dirname}/dist/${appName}`;
+app.use(express.static('./dist/agenda-gp'));
 
-app.use(express.static(outputPath));
 app.get('/*', (req, res) => {
-  res.sendFile(`${outputPath}/index.html`);
+  res.sendFile('index.html', {root: 'dist/agenda-gp/'});
 });
 
 app.listen(process.env.PORT || 8080);
