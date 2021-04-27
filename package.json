@@ -4,7 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "preinstall": "npm cache clean --force && npm install",
+    "preinstall": "npm cache clean --force && npm config set package-lock false",
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build --prod",
