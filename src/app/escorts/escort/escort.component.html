@@ -1,20 +1,18 @@
-<div class="box-body box-profile">
-  <h2 class="place-info-box-text">{{escort.name}}</h2>
+<div class="escorts-info-box">
+    <a [routerLink]="['/profiles' , escort.id]">
+        <div class="escorts-info-box-content">
+            <h2 class="escorts-info-box-text">{{escort.name}} , </h2>
+            <p class="escorts-info-box-p">{{escort.age}} </p>
+            <span class="escorts-info-box-span-price">R$ {{escort.hourCost}} /h</span>
+            <br>
+            <span class="escorts-info-box-span-city"> {{escort.cityPlace}}</span>
+        </div>
 
-  <a [routerLink]="['/profiles' , escort.id]">
-    <div class="place-info-box-header">
-      <i class="fa fa-toggle-{{escort.status}}" aria-hidden="true"></i>
-      <br>
-    </div>
-    <div class="place-info-box">
-      <span class="place-info-box-icon"><img [src]="escort.profileImagePath" alt="" /></span>
-      <div class="place-info-box-content">
-        <p class="place-info-box-detail">{{escort.category}} </p>
-        <span class="place-info-box-detail">{{escort.hourCost}} </span>
-        <span class="place-info-box-detail"> {{escort.cityPlace}}</span>
-        <span class="place-info-box-detail"> {{escort.celphone}} </span>
-      </div>
-    </div>
-    <hr>
-  </a>
+        <div class="escorts-info-box-header">
+            <i class="fa fa-toggle-{{escort.status}}" aria-hidden="true"></i>
+            <br>
+        </div>
+        <span class="escorts-info-box-img"><img [src]="escort.profileImagePath" alt="" /></span>
+        <hr>
+    </a>
 </div>

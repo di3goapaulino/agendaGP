@@ -1,27 +1,30 @@
-<section class="content-header">
+<!-- mover barra de busca para header-->
+<!-- <section class="content-header">
   <h1>
     Encontre sua expereciência perfeita
   </h1>
-
-  <!-- barra de busca-->
-  <div class="row search">
+  <section class="search">
     <div class="input-group">
       <input type="search" class="form-control rounded" placeholder="buscar" aria-label="buscar"
         aria-describedby="search-addon" />
       <button type="button" class="btn btn-outline-primary">buscar</button>
     </div>
-  </div>
+  </section>
 
-</section>
+</section> -->
 
-<section class="story">
+<section class="container-home">
 
-</section>
+    <h1>
+        A sua expereciência perfeita está aqui.
+    </h1>
+    <br>
+    <section class="containe-escorts">
 
-<section class="container" >
+        <section class="escorts-info-box" *ngFor="let escort of escorts">
+            <mt-escort [escort]="escort"></mt-escort>
+        </section>
 
-  <div class="item" *ngFor="let escort of escorts">
-    <mt-escort [escort]="escort"></mt-escort>
-  </div>
+    </section>
 
 </section>

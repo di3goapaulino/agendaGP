@@ -1,7 +1,7 @@
 export interface Escort {
     id: string
     name: string
-    category: string
+    age: string
     hourCost: string
     profileImagePath: string
     about: string
